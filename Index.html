@@ -466,10 +466,12 @@
       document.getElementById('status').innerHTML = `<span class="error">// ERROR: ${e.message}</span>`;
     }
 
-    btn.disabled = false;
 
     // Store data globally
     window._currentData = data;
+    window._currentPair = selectedPair;
+    btn.disabled = false;
+    drawEquity(data);
 
     // Show CSV button and equity
     document.getElementById('csv-btn').style.display = '';
